@@ -1,0 +1,19 @@
+{
+    "name": "tristanward/tinygram",
+    "description": "A light-weight instagram integration",
+    "authors": [
+        {
+            "name": "Tristan Ward",
+            "email": "tristanward1989@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "kitetail/zttp": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tristanward\\Tinygram\\": "src/"
+        }
+    }
+}
