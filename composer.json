@@ -1,6 +1,7 @@
 {
     "name": "tristanward/tinygram",
     "description": "A light-weight instagram integration",
+    "keywords": ["instagram","image","feed"],
     "authors": [
         {
             "name": "Tristan Ward",
