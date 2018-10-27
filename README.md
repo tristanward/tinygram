@@ -23,7 +23,6 @@ INSTAGRAM_ACCESS_TOKEN=
 
 use Tristanward\Tinygram\Tinygram;
 
-// Instanciate Tinygram
 $tinygram = new Tinygram();
 
 // Get 9 most recent Instagram posts
