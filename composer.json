@@ -16,5 +16,12 @@
         "psr-4": {
             "Tristanward\\Tinygram\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tristanward\\Tinygram\\TinygramServiceProvider"
+            ]
+        }
     }
 }
