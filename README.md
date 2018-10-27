@@ -4,7 +4,7 @@ A light-weight Instagram integration.  Pull recent Instagram images into a Larav
 ## Installation
 Install via composer:
 
-```
+```php
 $ composer require tristanward/tinygram
 ```
 
@@ -13,12 +13,12 @@ Tinygram requires an Instagram access token to access recent Instagram posts.  R
 
 The Instagram access token should be specified in the Laravel `.env` file:
 
-```
+```php
 INSTAGRAM_ACCESS_TOKEN=
 ```
 
 ## Usage
-```
+```php
 <?php
 
 use Tristanward\Tinygram\Tinygram;
@@ -31,13 +31,13 @@ $media = $tinygram->recentMedia($count = 9);
 ```
 
 ## Sample Output
-```
+```php
 Collection {
     #items: array:9 [
         0 => array:3 [
-            "link" => ""
-            "location" => ""
-            "url" => ""
+            "link" => "" // Link to post on Instagram site
+            "location" => "" // Textual real world location of image
+            "url" => "" // Instagram URL for highest available resolution image
         ]
             1 => array:3 [
             "link" => ""
