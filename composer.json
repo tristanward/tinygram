@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tristanward\\Tinygram\\TinygramServiceProvider"
+                "Tristanward\\Tinygram\\Providers\\TinygramServiceProvider"
             ]
         }
     }
