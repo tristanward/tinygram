@@ -2,11 +2,13 @@
 
 namespace Tristanward\Tinygram;
 
-use Zttp\Zttp;
+use GuzzleHttp\Client;
 use Illuminate\Support\Collection;
 
 class Tinygram
 {
+    private $response;
+
     /**
      * Get raw data for recent instagram posts
      *
@@ -15,9 +17,9 @@ class Tinygram
      */
     public function recentMediaRaw($count = null)
     {
-        $response = Zttp::get($this->recentMediaUrl());
+        $this->response = (new Client())->request('GET', $this->recentMediaUrl());
 
-        $media = collect($response->json()['data']);
+        $media = collect($this->getData());
 
         if ($count) {
             $media = $media->take($count);
@@ -53,5 +55,15 @@ class Tinygram
     private function recentMediaUrl()
     {
         return config('tinygram.recentMediaBaseUrl') . config('tinygram.token');
+    }
+
+    /**
+     * Get image data from response
+     *
+     * @return String
+     */
+    private function getData()
+    {
+        return json_decode($this->response->getBody()->getContents(), true)['data'];
     }
 }
