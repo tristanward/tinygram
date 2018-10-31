@@ -18,15 +18,15 @@ INSTAGRAM_ACCESS_TOKEN=
 ```
 
 ## Usage
+Tinygram uses a Laravel facade:
+
 ```php
 <?php
 
-use Tristanward\Tinygram\Tinygram;
-
-$tinygram = new Tinygram();
+use Tristanward\Tinygram\Facades\Tinygram;
 
 // Get 9 most recent Instagram posts
-$media = $tinygram->recentMedia($count = 9);
+$media = Tinygram::recentMedia($count = 9);
 ```
 
 ## Sample Output
