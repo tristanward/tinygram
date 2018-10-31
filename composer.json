@@ -2,6 +2,7 @@
     "name": "tristanward/tinygram",
     "description": "A light-weight instagram integration",
     "keywords": ["instagram","image","feed"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Tristan Ward",
