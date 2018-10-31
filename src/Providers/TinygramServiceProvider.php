@@ -2,6 +2,7 @@
 
 namespace Tristanward\Tinygram\Providers;
 
+use Tristanward\Tinygram\Tinygram;
 use Illuminate\Support\ServiceProvider;
 
 class TinygramServiceProvider extends ServiceProvider
@@ -13,6 +14,8 @@ class TinygramServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app->bind('Tinygram', Tinygram::class);
+
         $this->publishConfigs();
     }
 

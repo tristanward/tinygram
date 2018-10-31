@@ -21,7 +21,10 @@
         "laravel": {
             "providers": [
                 "Tristanward\\Tinygram\\Providers\\TinygramServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Tinygram": "Tristanward\\Tinygram\\Facades\\Tinygram"
+            }
         }
     }
 }
