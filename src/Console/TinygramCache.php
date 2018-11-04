@@ -5,7 +5,7 @@ namespace Tristanward\Tinygram\Console;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Tristanward\Tinygram\Facades\Tinygram;
-use Tristanward\Tinygram\Models\TinyImage;
+use Tristanward\Tinygram\Models\Tinyimage;
 
 class TinygramCache extends Command
 {
@@ -42,11 +42,11 @@ class TinygramCache extends Command
     {
         Tinygram::recentMediaRaw()
             ->each(function($post) {
-                if (TinyImage::whereMediaId($post['id'])->count()) {
+                if (Tinyimage::whereMediaId($post['id'])->count()) {
                     return;
                 }
 
-                TinyImage::create([
+                Tinyimage::create([
                     'media_id' => $post['id'],
                     'link' => $post['link'],
                     'location' => $post['location']['name'],
