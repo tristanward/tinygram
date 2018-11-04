@@ -6,8 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Changed
-- Updated readme file
+
+## [1.1.0] - 2018-11-04
+
+### Added
+
+- Ability to cache Instagram posts to limit use of Instagram API
 
 ## [1.0.1] - 2018-10-31 👻
 
