@@ -4,6 +4,7 @@ namespace Tristanward\Tinygram;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Collection;
+use Tristanward\Tinygram\Models\Tinyimage;
 
 class Tinygram
 {
@@ -45,6 +46,17 @@ class Tinygram
         });
 
         return $basic;
+    }
+
+    /**
+     * Get cached Tinyimage media
+     *
+     * @param integer $count
+     * @return Illuminate\Support\Collection
+     */
+    public function cachedMedia($count = null)
+    {
+        return Tinyimage::orderByDesc('media_created_at')->take($count)->get();
     }
 
     /**
