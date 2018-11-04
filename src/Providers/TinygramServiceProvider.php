@@ -4,6 +4,7 @@ namespace Tristanward\Tinygram\Providers;
 
 use Tristanward\Tinygram\Tinygram;
 use Illuminate\Support\ServiceProvider;
+use Tristanward\Tinygram\Console\TinygramCache;
 
 class TinygramServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,8 @@ class TinygramServiceProvider extends ServiceProvider
         $this->app->bind('Tinygram', Tinygram::class);
 
         $this->publishConfigs();
+        $this->publishDatabaseFiles();
+        $this->publishCommands();
     }
 
     /**
@@ -52,5 +55,23 @@ class TinygramServiceProvider extends ServiceProvider
     private function getConfigsPath()
     {
         return __DIR__.'/../Config/tinygram.php';
+    }
+
+    private function publishDatabaseFiles()
+    {
+        $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
+
+        $this->publishes([
+            __DIR__ . '/../Database/migrations' => base_path('database/migrations')
+        ], 'migrations');
+    }
+
+    private function publishCommands()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                TinygramCache::class,
+            ]);
+        }
     }
 }
