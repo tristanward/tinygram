@@ -1,6 +1,6 @@
 {
     "name": "tristanward/tinygram",
-    "description": "A light-weight instagram integration",
+    "description": "A light-weight Instagram integration.  Pull recent Instagram images into a Laravel website.",
     "keywords": ["instagram","image","feed"],
     "license": "MIT",
     "authors": [
