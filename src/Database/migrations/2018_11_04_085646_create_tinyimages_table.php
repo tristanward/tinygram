@@ -15,7 +15,7 @@ class CreateTinyimagesTable extends Migration
     {
         Schema::create('tinyimages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('media_id');
+            $table->string('media_id')->unique();
             $table->string('link');
             $table->string('location');
             $table->string('standard_url');

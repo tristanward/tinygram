@@ -3,6 +3,8 @@
 namespace Tristanward\Tinygram\Console;
 
 use Illuminate\Console\Command;
+use Tristanward\Tinygram\Facades\Tinygram;
+use Tristanward\Tinygram\Models\TinyImage;
 
 class TinygramCache extends Command
 {
@@ -37,6 +39,19 @@ class TinygramCache extends Command
      */
     public function handle()
     {
-        dd('cache');
+        Tinygram::recentMediaRaw()
+            ->each(function($post) {
+                if (TinyImage::whereMediaId($post['id'])->count()) {
+                    return;
+                }
+
+                TinyImage::create([
+                    'media_id' => $post['id'],
+                    'link' => $post['link'],
+                    'location' => $post['location']['name'],
+                    'standard_url' => $post['images']['standard_resolution']['url'],
+                    'thumb_url' => $post['images']['thumbnail']['url'],
+                ]);
+            });
     }
 }
