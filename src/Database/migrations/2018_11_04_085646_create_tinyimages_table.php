@@ -20,6 +20,7 @@ class CreateTinyimagesTable extends Migration
             $table->string('location');
             $table->string('standard_url');
             $table->string('thumb_url');
+            $table->dateTime('media_created_at');
             $table->timestamps();
         });
     }

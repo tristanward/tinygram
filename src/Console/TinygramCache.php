@@ -2,6 +2,7 @@
 
 namespace Tristanward\Tinygram\Console;
 
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Tristanward\Tinygram\Facades\Tinygram;
 use Tristanward\Tinygram\Models\TinyImage;
@@ -51,6 +52,7 @@ class TinygramCache extends Command
                     'location' => $post['location']['name'],
                     'standard_url' => $post['images']['standard_resolution']['url'],
                     'thumb_url' => $post['images']['thumbnail']['url'],
+                    'media_created_at' => Carbon::createFromTimestamp($post['created_time']),
                 ]);
             });
     }
