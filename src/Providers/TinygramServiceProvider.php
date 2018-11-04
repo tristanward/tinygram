@@ -57,6 +57,11 @@ class TinygramServiceProvider extends ServiceProvider
         return __DIR__.'/../Config/tinygram.php';
     }
 
+    /**
+     * Register and publish database migration.
+     *
+     * @return void
+     */
     private function publishDatabaseFiles()
     {
         $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
@@ -66,6 +71,12 @@ class TinygramServiceProvider extends ServiceProvider
         ], 'migrations');
     }
 
+
+    /**
+     * Register console command.
+     *
+     * @return void
+     */
     private function publishCommands()
     {
         if ($this->app->runningInConsole()) {
