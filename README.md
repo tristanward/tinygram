@@ -72,7 +72,7 @@ $raw = Tinygram::recentMediaRaw($count = 9);
 
 ## Output
 
-The `cachedMedia()` method returns a Laravel collection of `Tinyimage` objects.  The underlying Instagram post information can be access using the Tinyimage object attributes:
+The `cachedMedia()` method returns a Laravel collection of `Tinyimage` objects.  The underlying Instagram post information can be access using the `Tinyimage` object attributes:
 
 ```php
 $tinyimage->media_id
