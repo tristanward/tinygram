@@ -86,3 +86,4 @@ $tinyimage->media_created_at
 Both the `recentMedia()` and `recentMediaRaw()` methods return a Laravel collection of arrays containing data from Instagram.  Use `dd()` on the output of these methods to see available data.
 
 # Thanks
+[https://www.tristanward.co.uk](https://www.tristanward.co.uk)
