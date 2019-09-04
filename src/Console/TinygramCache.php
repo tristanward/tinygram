@@ -49,7 +49,7 @@ class TinygramCache extends Command
                 Tinyimage::create([
                     'media_id' => $post['id'],
                     'link' => $post['link'],
-                    'location' => $post['location'] ? $post['location']['name'] : '',
+                    'location' => $post['location']['name'],
                     'standard_url' => $post['images']['standard_resolution']['url'],
                     'thumb_url' => $post['images']['thumbnail']['url'],
                     'media_created_at' => Carbon::createFromTimestamp($post['created_time']),
