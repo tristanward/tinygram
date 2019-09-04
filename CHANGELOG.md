@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.2] - 2019-09-04
+
+### Fixed
+
+- Added a migration to make location nullable in the DB
+
 ## [1.1.1] - 2018-11-04
 
 ### Fixed
