@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.3] - 2019-09-04
+
+### Fixed
+
+- Added versioning to composer.json
+
 ## [1.1.2] - 2019-09-04
 
 ### Fixed
